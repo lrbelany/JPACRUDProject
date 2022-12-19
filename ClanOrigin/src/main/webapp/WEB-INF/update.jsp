@@ -8,6 +8,9 @@
 <title>update dropship</title>
 </head>
 <body>
+<a href="home.do">Home</a>
+<br>
+<br>
 <div class = "col-10 mx-auto">
 	<a class = "link-dark" href="home.do">Home</a>
 	<h3> Assemble units in a Dropship </h3>

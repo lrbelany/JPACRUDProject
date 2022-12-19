@@ -16,5 +16,5 @@ public interface DropShipDAO {
 	
 	DropShip update(int id, DropShip dship);
 	
-	boolean delete(int id);
+	List<DropShip> delete(int id);
 }

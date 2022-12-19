@@ -42,7 +42,12 @@
 	<br>
 	<a href="upgrade.do">Configure Dropship</a>
 	<br>
-	<a href="delete.do">Dropship self destruct</a>
+	<br>
+	<br>
+	<div>
+	
+	
+
 
 </body>
 </html>

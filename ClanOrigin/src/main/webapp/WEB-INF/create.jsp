@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="home.do">Home</a>
+<br>
+<br>
 <h3>Create a new Dropship:</h3>
 	<form action="create.do" method="POST">
 		<select required name="clan" id="clan">

@@ -7,8 +7,9 @@
 <title> Dropship </title>
 </head>
 <body>
-
-
+<a href="home.do">Home</a>
+<br>
+<br>
 Dropship ID: ${dship.id}
 <br>
 Clan: ${dship.clan}
@@ -21,7 +22,12 @@ Aerospace Fighter: ${dship.aerospaceFighter}
 <br>
 Combat Vehicle: ${dship.combatVehicle}
 <br>
-<a href="upate.do?id=$.id">Configure Dropship</a>
+<a href="update.do?id=$.id">Configure Dropship</a>
+<br>
+<form action="delete.do" method="GET">
+				<input type ="hidden" name = "id" value ="${dship.id}"/>
+				<input class = "btn btn-primary" type="submit" value="Delete"  />
+				</form>
 
 </body>
 </html>

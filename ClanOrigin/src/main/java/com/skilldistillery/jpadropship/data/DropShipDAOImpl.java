@@ -70,9 +70,8 @@ public class DropShipDAOImpl implements DropShipDAO {
 	}
 
 	@Override
-	public boolean delete(int id) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPADropShip");
-		EntityManager em = emf.createEntityManager();
+	public List<DropShip> delete(int id) {
+	
 		em.getTransaction().begin();
 
 		DropShip dship = em.find(DropShip.class, id);
@@ -81,9 +80,9 @@ public class DropShipDAOImpl implements DropShipDAO {
 
 		em.getTransaction().commit();
 
-		boolean dropShipKia = !em.contains(dship);
+		
 
 		em.close();
-		return dropShipKia;
+		return this.findAll();
 	}
 }

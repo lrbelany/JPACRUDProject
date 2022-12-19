@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jpadropship.data.DropShipDAO;
@@ -88,21 +87,22 @@ public class DropShipController {
 	@RequestMapping(path = "create.do")
 	public String create(Model model, DropShip dship) {
 		model.addAttribute("newDropShip", dao.create(dship));
-		return "create";
+		return "output";
 		
 	}
 	
 	@RequestMapping(path = "created.do")
-	public ModelAndView Created() {
-		ModelAndView mv = new ModelAndView();
+	public String Created(Model model, DropShip dship) {
 		
-		mv.setViewName("WEB-INF/output.jsp");
-		return mv;
+		List<DropShip> dshiplist = dao.findAll();
+		model.addAttribute("dshipList", dshiplist);
+		return "output";
 	}
 	
-	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
-	public String destroy(@RequestParam Model model, int id) {
-		dao.delete(id);
+	@RequestMapping(path = "delete.do")
+	public String delete(@RequestParam Model model, int id) {
+		List<DropShip> dship = dao.delete(id);
+		model.addAttribute("dshipList", dship);
 		return "home";
 	}
 }
