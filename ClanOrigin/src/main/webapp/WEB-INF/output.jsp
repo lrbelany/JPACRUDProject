@@ -4,9 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Jade Falcon Dropship select</title>
 </head>
 <body>
-${outputMessage}
+
+
+Dropship ID: ${dship.id}
+<br>
+Clan: ${dship.clan}
+<br>
+Mech: ${dship.mech} 
+<br>
+Pilot: ${dship.pilot}
+<br>
+Aerospace Fighter: ${dship.aerospaceFighter}
+<br>
+Combat Vehicle: ${dship.combatVehicle}
+
+<a href="upgrade.do?id=$.id">Configure Dropship</a>
+
 </body>
 </html>

@@ -7,77 +7,105 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpadropship.data.DropShipDAO;
 import com.skilldistillery.jpadropship.entities.DropShip;
 
 @Controller
 public class DropShipController {
-	
 
 	@Autowired
 	private DropShipDAO dao;
-	
-	@RequestMapping(path = { "/", "home.do"} )
+
+	@RequestMapping(path = { "/", "home.do" })
 	public String goToHome(Model model) {
-	
+
 //		model.addAttribute("dshipList", dao.findAll());
 
 		return "home";
 	}
 
-	
-	@RequestMapping("/falcon.do" )
-	public String clan(String clan) {
-		ModelAndView mv = new ModelAndView();
-		try {
-		
-		mv.addObject("clan", clan);
-		System.out.println("Test: "+ clan);
-		List<DropShip> faction = dao.findByClan(clan);
+	@RequestMapping("falcon.do")
+	public String clanJadeFalcon() {
 
-		mv.addObject("clan", faction);
-		mv.setViewName("WEB-INF/falcon.jsp");
-		} catch (NumberFormatException e) {
-			mv.addObject("outputMessage", "No Drop Ship Id found, please try entering a valid number");
-			mv.setViewName("WEB-INF/errorpage.jsp");
-		}
+		// try {
+
+//			List<DropShip> faction = dao.findByClan(clan);
+//		model.addAttribute("clan", clan);
+//		System.out.println("Test: "+ clan);
+//
+//		model.addAttribute("clan", faction);
+//		model.addAttribute("WEB-INF/falcon.jsp");
+//		} catch (NumberFormatException e) {
+//			model.addAttribute("outputMessage", "No Drop Ship Id found, please try entering a valid number");
+//			model.addAttribute("WEB-INF/errorpage.jsp");
+//		}
 		return "falcon";
 	}
-	@RequestMapping("/output.do")
-	public String output(@RequestParam int id, Model model) {
-		
+
+	@RequestMapping("wolf.do")
+	public String clanWolf(String clan, Model model) {
+
 		try {
-		
-		DropShip dship = dao.findById(id);
-		List<DropShip> dsfa = dao.findAll();
-		if (dship != null) {
-		
 
-			model.addAttribute("drop_ship", dship);
-			
-			model.addAttribute("WEB-INF/output.jsp");
+			List<DropShip> faction = dao.findByClan(clan);
 
-		} else {
-			model.addAttribute("outputMessage", "Drop Ship not found");
+			model.addAttribute("clan", faction);
 
+		} catch (NumberFormatException e) {
+			model.addAttribute("outputMessage", "No Drop Ship Id found, please try entering a valid number");
 			model.addAttribute("WEB-INF/errorpage.jsp");
-
 		}
+		return "wolf";
+	}
+
+	@RequestMapping("id.do")
+	public String findById(@RequestParam int id, Model model) {
+
+		DropShip dship = dao.findById(id);
+
+		model.addAttribute("dship", dship);
+
+		return "output";
+	}
+
+	@RequestMapping("gotoform.do")
+	public String gotoForm() {
+
+		return "findbyid";
+	}
+
+	@RequestMapping("output.do")
+	public String output(@RequestParam int id, Model model) {
+
+		try {
+
+			DropShip dship = dao.findById(id);
+			List<DropShip> dsfa = dao.findAll();
+			if (dship != null) {
+
+				model.addAttribute("drop_ship", dship);
+
+				model.addAttribute("WEB-INF/output.jsp");
+
+			} else {
+				model.addAttribute("outputMessage", "Drop Ship not found");
+
+				model.addAttribute("WEB-INF/errorpage.jsp");
+
+			}
 		} catch (NumberFormatException e) {
 			model.addAttribute("outputMessage", "No Drop Ship Id found, please try entering a valid number");
 			model.getAttribute("WEB-INF/views/error.jsp");
 		}
-		return "output";
+		return "/output";
 	}
-	
-	
+
 	@RequestMapping("getdropship.do")
 	public String displayDropShip(@RequestParam int dshipId, Model model) {
-DropShip dship = dao.findById(dshipId);
-model.addAttribute("mech", dship);		
-return "getdropship";
+		DropShip dship = dao.findById(dshipId);
+		model.addAttribute("mech", dship);
+		return "/getdropship";
 	}
 
 }

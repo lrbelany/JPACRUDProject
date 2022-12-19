@@ -33,7 +33,10 @@
 
 </div>
 
+${dship}
 	
+	
+	<a href="gotoform.do">Dropship</a>
 	
 
 </body>
