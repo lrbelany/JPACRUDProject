@@ -32,7 +32,7 @@ class DropShipTest {
 	@BeforeEach
 	void setUp() throws Exception {
 	em = emf.createEntityManager();
-    dship = em.find(DropShip.class, 1);			
+    dship = em.find(DropShip.class, 3);			
 	}
 
 	@AfterEach
@@ -44,8 +44,12 @@ class DropShipTest {
 	@Test
 	void test_dropship_mapping() {
 	assertNotNull(dship);
-	assertEquals("summoner", dship.getMech());
-	assertEquals("elizabeth_hazen", dship.getPilot());
+	assertEquals("warhawk", dship.getMech());
+	assertEquals("aidan_pryde", dship.getPilot());
+	assertEquals("jade_falcon", dship.getClan());
+	assertEquals("tomahawk", dship.getAerospaceFighter());
+	assertEquals("constable", dship.getElemental());
+	assertEquals("zorya", dship.getCombatVehicle());
 	
 	
 	}

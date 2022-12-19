@@ -6,6 +6,8 @@ import com.skilldistillery.jpadropship.entities.DropShip;
 
 public interface DropShipDAO {
 
+	List<DropShip> findByClan(String clan);
+
 	DropShip findById(int dshipId);
 	
 	List<DropShip> findAll();

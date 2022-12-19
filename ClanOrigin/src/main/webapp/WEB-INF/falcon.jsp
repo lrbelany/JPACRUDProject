@@ -11,7 +11,7 @@
 <link href="../css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-<h1> In the beginning there were two.....</h1>
+<h1>${clan}</h1>
 
 
 
@@ -19,14 +19,13 @@
 <div class="clan">
 <a href="falcon.do">
 <h2>Jade Falcon</h2>
-<img src="images/Jade Falcon.jpeg">
+<img src="images/jade falcon lair.jpeg">
 </a>
 </div>
-
 <div class="clan">
-<a href="wolf.do">
+<a href="/clan/wolf">
 <h2>Wolf</h2>
-<img src="images/wolf.jpeg">
+<img src="images/jade falcon lair.jpeg">
 </a>
 </div>
 

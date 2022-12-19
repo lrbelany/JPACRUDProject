@@ -24,6 +24,13 @@ public class DropShipDAOImpl implements DropShipDAO {
 	}
 
 	@Override
+	public List<DropShip> findByClan(String clan) {
+		String jpql = "SELECT d FROM DropShip d WHERE d.clan LIKE \"%"+ clan +"%\"";
+		return em.createQuery(jpql, DropShip.class).getResultList();
+//		return em.find(DropShip.class, clan);
+	}
+
+	@Override
 	public List<DropShip> findAll() {
 
 		String jpql = "SELECT d FROM DropShip d";

@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body, html {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	overflow-y: auto;
+	font-family: Arial, Helvetica Neue, sans-serif;
+}
+
+body > h1 {
+	text-align: center;
+}
+
+.clans {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.clan {
+	text-align: center;
+}
+
+
+.clan img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
