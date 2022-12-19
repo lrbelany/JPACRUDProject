@@ -3,13 +3,14 @@ package com.skilldistillery.jpadropship.data;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
-
-import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
-import com.skilldistillery.jpadropship.entities.DropShip;
+import org.springframework.stereotype.Service;
 
+import com.skilldistillery.jpadropship.entities.DropShip;
 
 @Service
 @Transactional
@@ -17,17 +18,10 @@ public class DropShipDAOImpl implements DropShipDAO {
 
 	@PersistenceContext
 	private EntityManager em;
-	
-	@Override
-	public DropShip findById(int dshipId) {
-		return em.find(DropShip.class, dshipId);
-	}
 
 	@Override
-	public List<DropShip> findByClan(String clan) {
-		String jpql = "SELECT d FROM DropShip d WHERE d.clan LIKE \"%"+ clan +"%\"";
-		return em.createQuery(jpql, DropShip.class).getResultList();
-//		return em.find(DropShip.class, clan);
+	public DropShip findById(int id) {
+		return em.find(DropShip.class, id);
 	}
 
 	@Override
@@ -39,20 +33,57 @@ public class DropShipDAOImpl implements DropShipDAO {
 
 	@Override
 	public DropShip create(DropShip dship) {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPADropShip");
+		EntityManager em = emf.createEntityManager();
+
+		em.getTransaction().begin();
+
+		em.flush();
+		System.out.println("Dropship sortied:" + dship);
+
+		em.getTransaction().commit();
+
+		em.close();
+		return dship;
 	}
 
 	@Override
-	public DropShip update(int dshipId, DropShip dship) {
-		// TODO Auto-generated method stub
-		return null;
+	public DropShip update(int id, DropShip dship) {
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPADropShip");
+		EntityManager em = emf.createEntityManager();
+
+		em.getTransaction().begin();
+
+		DropShip managed = em.find(DropShip.class, id);
+
+		managed.setClan(dship.getClan());
+		managed.setMech(dship.getMech());
+		managed.setPilot(dship.getPilot());
+		managed.setAerospaceFighter(dship.getAerospaceFighter());
+		managed.setCombatVehicle(dship.getCombatVehicle());
+
+		em.getTransaction().commit();
+
+		em.close();
+		return managed;
 	}
 
 	@Override
-	public boolean delete(int dshipId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean delete(int id) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPADropShip");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
 
+		DropShip dship = em.find(DropShip.class, id);
+
+		em.remove(dship);
+
+		em.getTransaction().commit();
+
+		boolean dropShipKia = !em.contains(dship);
+
+		em.close();
+		return dropShipKia;
+	}
 }

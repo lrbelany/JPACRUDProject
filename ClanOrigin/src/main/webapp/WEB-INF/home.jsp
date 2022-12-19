@@ -33,11 +33,16 @@
 
 </div>
 
-${dship}
+
 	
 	
-	<a href="gotoform.do">Dropship</a>
-	
+	<a href="gotoform.do">Search Dropship</a>
+	<br>
+	<a href="create.do">Create Dropship</a>
+	<br>
+	<a href="upgrade.do">Configure Dropship</a>
+	<br>
+	<a href="delete.do">Dropship self destruct</a>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Jade Falcon Dropship select</title>
+<title> Dropship </title>
 </head>
 <body>
 
@@ -20,8 +20,8 @@ Pilot: ${dship.pilot}
 Aerospace Fighter: ${dship.aerospaceFighter}
 <br>
 Combat Vehicle: ${dship.combatVehicle}
-
-<a href="upgrade.do?id=$.id">Configure Dropship</a>
+<br>
+<a href="upate.do?id=$.id">Configure Dropship</a>
 
 </body>
 </html>
