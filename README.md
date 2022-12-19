@@ -1,4 +1,5 @@
 # JPACRUDProject
+http://54.148.255.219:8080/ClanOrigin/
 
 ## Description
 This is an applications intended uses are as follows:
@@ -32,4 +33,3 @@ On the landing page there are currently three links at the bottom left of the pa
 4) Organization and sound naming of files and folders is paramount as it can make or break your deadlines
 
 5) make sure things work before adding visuals
- 
