@@ -42,6 +42,22 @@ public class DropShipController {
 
 		return "findbyid";
 	}
+	
+	@RequestMapping(path = "create.do")
+	public String create(Model model, DropShip dship, RedirectAttributes route) {
+		model.addAttribute("newDropShip", dao.create(dship));
+		route.addAttribute("comms", "Dropship Created");
+		return "redirect:created.do";
+		
+	}
+	
+	@RequestMapping(path = "created.do")
+	public String Created(@RequestParam("comms") String comms, Model model, DropShip dship) {
+		
+		List<DropShip> dshiplist = dao.findAll();
+		model.addAttribute("comms", comms);
+		return "created";
+	}
 
 	@RequestMapping("output.do")
 	public String output(@RequestParam int id, Model model) {
@@ -83,26 +99,13 @@ public class DropShipController {
 		return "output";
 	}
 	
-
-	@RequestMapping(path = "create.do")
-	public String create(Model model, DropShip dship) {
-		model.addAttribute("newDropShip", dao.create(dship));
-		return "output";
-		
-	}
-	
-	@RequestMapping(path = "created.do")
-	public String Created(Model model, DropShip dship) {
-		
-		List<DropShip> dshiplist = dao.findAll();
-		model.addAttribute("dshipList", dshiplist);
-		return "output";
-	}
 	
 	@RequestMapping(path = "delete.do")
-	public String delete(@RequestParam Model model, int id) {
-		List<DropShip> dship = dao.delete(id);
-		model.addAttribute("dshipList", dship);
-		return "home";
+	public String deleteId(@RequestParam int id, RedirectAttributes route) {
+		dao.deleteId(id);
+		route.addAttribute("comms", "Your Dropship was KIA");
+//		model.addAttribute("dshipList", dship);
+
+		return "";
 	}
 }

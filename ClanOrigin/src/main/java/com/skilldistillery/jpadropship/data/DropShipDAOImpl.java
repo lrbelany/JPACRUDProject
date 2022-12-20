@@ -37,7 +37,7 @@ public class DropShipDAOImpl implements DropShipDAO {
 		EntityManager em = emf.createEntityManager();
 
 		em.getTransaction().begin();
-
+		em.persist(dship);
 		em.flush();
 		System.out.println("Dropship sortied:" + dship);
 
@@ -70,8 +70,8 @@ public class DropShipDAOImpl implements DropShipDAO {
 	}
 
 	@Override
-	public List<DropShip> delete(int id) {
-	
+	public boolean deleteId(int id) {
+
 		em.getTransaction().begin();
 
 		DropShip dship = em.find(DropShip.class, id);
@@ -80,9 +80,7 @@ public class DropShipDAOImpl implements DropShipDAO {
 
 		em.getTransaction().commit();
 
-		
-
 		em.close();
-		return this.findAll();
+		return false;
 	}
 }
