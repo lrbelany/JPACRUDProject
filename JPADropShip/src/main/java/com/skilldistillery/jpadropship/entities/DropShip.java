@@ -104,14 +104,12 @@ public String getCombatVehicle() {
 public void setCombatVehicle(String combatVehicle) {
 	this.combatVehicle = combatVehicle;
 }
-
 @Override
 public String toString() {
-	StringBuilder builder = new StringBuilder();
-	builder.append("DropShip [id=").append(id).append(", clan=").append(clan).append(", mech=").append(mech)
-			.append(", pilot=").append(pilot).append(", aerospaceFighter=").append(aerospaceFighter)
-			.append(", elemental=").append(elemental).append(", combatVehicle=").append(combatVehicle).append("]");
-	return builder.toString();
+	return "DropShip [id=" + id + ", clan=" + clan + ", mech=" + mech + ", pilot=" + pilot + ", aerospaceFighter="
+			+ aerospaceFighter + ", elemental=" + elemental + ", combatVehicle=" + combatVehicle + "]";
 }
+
+
 
 }

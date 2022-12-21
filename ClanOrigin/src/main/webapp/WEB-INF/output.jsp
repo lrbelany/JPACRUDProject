@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> Dropship </title>
+<title> Dropship output</title>
 </head>
 <body>
 <a href="home.do">Home</a>
@@ -19,6 +19,8 @@ Mech: ${dship.mech}
 Pilot: ${dship.pilot}
 <br>
 Aerospace Fighter: ${dship.aerospaceFighter}
+<br>
+Elemental: ${dship.elemental}
 <br>
 Combat Vehicle: ${dship.combatVehicle}
 <br>

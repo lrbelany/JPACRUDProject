@@ -25,7 +25,12 @@ body > h1 {
 }
 
 
-.clan img {
+.clanjf img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.clanwolf img {
 	width: 100%;
 	height: auto;
 	display: block;

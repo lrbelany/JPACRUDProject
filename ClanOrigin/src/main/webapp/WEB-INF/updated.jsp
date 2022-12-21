@@ -4,10 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Dropship updated</title>
 </head>
 <body>
-if you are seeing this we have something
+<a href="home.do">Home</a>
+
+<br>
+<br>
+<br>
+<br>
+<h3>Dropship Configured</h3>
 
 ${dshipList}
 </body>

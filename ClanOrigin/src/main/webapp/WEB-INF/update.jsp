@@ -15,9 +15,8 @@
 		<a class="link-dark" href="home.do">Home</a>
 		<h3>Assemble units in a Dropship</h3>
 		<form class="form-group" action="update.do" method="GET">
-<label for="id">ID</label> <input type="text" name="id"
-				required />
-
+<label for="id">ID</label> <input type="text"
+				name="id" required />
 			<br> <br> <label for="clan">Clan</label> <select required
 				name="clan" id="clan">
 				<option value="jadeFalcon">Jade Falcon</option>
@@ -37,31 +36,6 @@
 
 
 	<br>
-
-	<c:choose>
-
-		<c:when test="${empty dshipList}">
-
-			<h2>errorpage.do</h2>
-			<body>
-		</c:when>
-		<c:otherwise>
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Clan</th>
-					</tr>
-				</thead>
-				<c:forEach var="dship" items="${dshipList}">
-					<tr>
-						<td>${dship.id}
-						<td>
-					</tr>
-				</c:forEach>
-			</table>
-		</c:otherwise>
-	</c:choose>
 
 
 </body>

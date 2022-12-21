@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Created</title>
 </head>
 <body>
-this is working
+<a href="home.do">Home</a>
+<br>
+<br>
+<br>
+<h2>Dropship Created</h2>
 </body>
 </html>

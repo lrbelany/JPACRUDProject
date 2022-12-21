@@ -15,24 +15,18 @@
 
 
 
-<div class="clans">
-<div class="clan">
-<a href="falcon.do">
+
+<div class="row">
+  <div class="column">
 <h2>Jade Falcon</h2>
-<img src="images/Jade Falcon.jpeg">
-</a>
-</div>
+    <img src="images/Jade Falcon.jpeg" alt="falcon" style="width:50%">
+  </div>
 
-<div class="clan">
-<a href="wolf.do">
+  <div class="column">
 <h2>Wolf</h2>
-<img src="images/wolf.jpeg">
-</a>
+    <img src="images/wolf.jpeg" alt="wolf" style="width:50%">
+  </div>
 </div>
-
-
-</div>
-
 
 	
 	
@@ -44,6 +38,15 @@
 	<br>
 	<br>
 	<br>
+	
+		<form class="form-group" action="deleteid.do" method="GET">
+<label for="id">To Delete Dropship enter its ID</label> <input type="text" name="id"/>
+				 <input class="btn btn-dark" type="submit" value="Delete" /> <br> <br>
+		</form>
+	
+	
+			
+				
 	<div>
 	
 
@@ -59,13 +62,46 @@
 		     <table>
 				<thead>
 					<tr>
-						<th>ID</th>
+						<th></th>
 						<th></th>
 					</tr>
 				</thead>
 					<c:forEach var="dship" items="${dshipList}">
 						<tr>
-							<td>${dship.id} ${dship.clan} ${dship.mech} ${dship.pilot} ${dship.elemental} ${dship.aerospaceFighter} ${dship.combatVehicle}
+							<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+    
+      <th scope="col">ID</th>
+      <th scope="col">Clan</th>
+      <th scope="col">Mech</th>
+      <th scope="col">Pilot</th>
+      <th scope="col">Elemental</th>
+      <th scope="col">Aerospace Fighter</th>
+      <th scope="col">Combat Vehicle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      
+      <td>${dship.id}</td>
+      <br>
+      <td>${dship.clan}</td>
+      <br>
+      <td>${dship.mech}</td>
+      <br>
+      <td>${dship.pilot}</td>
+      <br>
+      <td>${dship.elemental}</td>
+      <br>
+      <td>${dship.aerospaceFighter}</td>
+      <br>
+      <td>${dship.combatVehicle}</td>
+  
+    </tr>
+  </tbody>
+</table>
 							
 						</tr>
 					</c:forEach>
