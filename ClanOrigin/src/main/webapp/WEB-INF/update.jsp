@@ -14,7 +14,9 @@
 	<div>
 		<a class="link-dark" href="home.do">Home</a>
 		<h3>Assemble units in a Dropship</h3>
-		<form class="form-group" action="update.do" method="POST">
+		<form class="form-group" action="update.do" method="GET">
+<label for="id">ID</label> <input type="text" name="id"
+				required />
 
 			<br> <br> <label for="clan">Clan</label> <select required
 				name="clan" id="clan">

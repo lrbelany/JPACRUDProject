@@ -31,6 +31,23 @@ private String combatVehicle;
 public DropShip() {
 	super();
 }
+public DropShip(int id, String clan, String pilot, String mech, String aerospaceFighter, String elemental, String combatVehicle) {
+	this.id = id;
+	this.clan = clan;
+	this.mech = mech;
+	this.pilot =pilot;
+	this.aerospaceFighter = aerospaceFighter;
+	this.elemental = elemental;
+	this.combatVehicle = combatVehicle;
+}
+public DropShip(String clan, String pilot, String mech, String aerospaceFighter, String elemental, String combatVehicle) {
+	this.clan = clan;
+	this.mech = mech;
+	this.pilot =pilot;
+	this.aerospaceFighter = aerospaceFighter;
+	this.elemental = elemental;
+	this.combatVehicle = combatVehicle;
+}
 
 public int getId() {
 	return id;

@@ -101,18 +101,18 @@ public String gotoCreated()  {
 		
 		return "update";
 	}
-	@RequestMapping(path = "update.do", method = RequestMethod.GET)
-	public String goToUpdate(@RequestParam("id") int id, Model model) {
-		DropShip dship = dao.findById(id);
+	@RequestMapping(path = "updated.do", method = RequestMethod.GET)
+	public String goToUpdate( Model model, int id, DropShip dship) {
+		dship = dao.findById(id);
 		model.addAttribute("dship", dship);
-		return "updated";
+		return "output";
 	}
 	
-	@RequestMapping(path = "updated.do", method = RequestMethod.POST)
+	@RequestMapping(path = "update.do", method = RequestMethod.GET)
 	public String updated(DropShip dship, Model model, RedirectAttributes redir) {
 		dao.update(dship.getId(), dship);
 		model.addAttribute("dship", dship);
-		return "output";
+		return "updated";
 	}
 	
 @RequestMapping("gotodeleteid.do")
