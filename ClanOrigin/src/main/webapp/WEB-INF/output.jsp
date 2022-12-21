@@ -22,9 +22,9 @@ Aerospace Fighter: ${dship.aerospaceFighter}
 <br>
 Combat Vehicle: ${dship.combatVehicle}
 <br>
-<a href="update.do?id=$.id">Configure Dropship</a>
+<a href="gotoupdate.do?id=$.id">Configure Dropship</a>
 <br>
-<form action="delete.do" method="GET">
+<form action="deleteid.do" method="GET">
 				<input type ="hidden" name = "id" value ="${dship.id}"/>
 				<input class = "btn btn-primary" type="submit" value="Delete"  />
 				</form>

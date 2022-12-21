@@ -11,7 +11,7 @@
 <br>
 <br>
 <h3>Create a new Dropship:</h3>
-	<form action="create.do" method="POST">
+	<form action="created.do" method="POST">
 		<select required name="clan" id="clan">
 			<option value="jadeFalcon">Jade Falcon</option>
 			<option value="wolf">Wolf</option>
@@ -22,6 +22,8 @@
 		<br> <br>
 			<label for="aerospaceFighter">Aerospace Fighter</label> 
 			<input type="text" name="aerospaceFighter" /> 
+			<label for="elemental">Elemental</label> 
+			<input type="text" name="elemental" /> 
 			<label for="combatVehicle">Combat Vehicle</label> 
 			<input type="text" name="combatVehicle" />  <br><br>
 			

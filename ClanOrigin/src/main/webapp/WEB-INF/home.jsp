@@ -38,16 +38,44 @@
 	
 	<a href="gotoform.do">Search Dropship</a>
 	<br>
-	<a href="create.do">Create Dropship</a>
+	<a href="gotocreate.do">Create Dropship</a>
 	<br>
-	<a href="upgrade.do">Configure Dropship</a>
+	<a href="gotoupdate.do">Configure Dropship</a>
 	<br>
 	<br>
 	<br>
 	<div>
 	
-	
 
+<c:choose>
+
+		<c:when test="${empty dshipList}">
+
+			<h2>Nothing found</h2>
+				<body>
+		
+		</c:when>
+		<c:otherwise>
+		     <table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th></th>
+					</tr>
+				</thead>
+					<c:forEach var="dship" items="${dshipList}">
+						<tr>
+							<td>${dship.id} ${dship.clan} ${dship.mech} ${dship.pilot} ${dship.elemental} ${dship.aerospaceFighter} ${dship.combatVehicle}
+							
+						</tr>
+					</c:forEach>
+			</table>
+
+
+		</c:otherwise>
+	</c:choose>
+
+</div>
 
 </body>
 </html>

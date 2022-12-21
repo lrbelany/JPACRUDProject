@@ -21,6 +21,7 @@ public class DropShipController {
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String goToHome(Model model) {
+	
 
 		model.addAttribute("dshipList", dao.findAll());
 
@@ -42,25 +43,36 @@ public class DropShipController {
 
 		return "findbyid";
 	}
+
 	
-	@RequestMapping(path = "create.do")
-	public String create(Model model, DropShip dship, RedirectAttributes route) {
+	@RequestMapping("created.do")
+	public String create(Model model, DropShip dship) {
 		model.addAttribute("newDropShip", dao.create(dship));
-		route.addAttribute("comms", "Dropship Created");
-		return "redirect:created.do";
+		//method = RequestMethod.POST
+		//route.addAttribute("comms", "Dropship Created");
+		return "created";
 		
 	}
+@RequestMapping("gotocreate.do")
+public String gotoCreate()  {
+	return "create";
+}
+@RequestMapping("gotocreated.do")
+public String gotoCreated()  {
+	return "created";
+}
 	
-	@RequestMapping(path = "created.do")
-	public String Created(@RequestParam("comms") String comms, Model model, DropShip dship) {
+	@RequestMapping(path = "create.do")
+	public String Created(@RequestParam ("dship")DropShip dship, Model model) {
 		
-		List<DropShip> dshiplist = dao.findAll();
-		model.addAttribute("comms", comms);
+		model.addAttribute("dship", dao.findAll());
+		//model.addAttribute("comms", comms);
+		
 		return "created";
 	}
 
 	@RequestMapping("output.do")
-	public String output(@RequestParam int id, Model model) {
+	public String output(@RequestParam ("id")int id, Model model) {
 
 		try {
 
@@ -84,28 +96,36 @@ public class DropShipController {
 		}
 		return "output";
 	}
-
-	@RequestMapping(path = "update.do")
-	public String goToUpdatePage(@RequestParam int id, Model model) {
-		DropShip dship = dao.findById(id);
-		model.addAttribute("dship", dship);
+	@RequestMapping("gotoupdate.do")
+	public String gotoupdate() {
+		
 		return "update";
 	}
+	@RequestMapping(path = "update.do", method = RequestMethod.GET)
+	public String goToUpdate(@RequestParam("id") int id, Model model) {
+		DropShip dship = dao.findById(id);
+		model.addAttribute("dship", dship);
+		return "updated";
+	}
 	
-	@RequestMapping(path = "updated.do")
-	public String updateBook(DropShip dship, Model model, RedirectAttributes redir) {
+	@RequestMapping(path = "updated.do", method = RequestMethod.POST)
+	public String updated(DropShip dship, Model model, RedirectAttributes redir) {
 		dao.update(dship.getId(), dship);
 		model.addAttribute("dship", dship);
 		return "output";
 	}
 	
-	
-	@RequestMapping(path = "delete.do")
-	public String deleteId(@RequestParam int id, RedirectAttributes route) {
+@RequestMapping("gotodeleteid.do")
+public String deletion() {
+	return"deleteid";
+}
+
+	@RequestMapping(path = "deleteid.do", method = RequestMethod.POST)
+	public String deleteId(@RequestParam ("id") int id, RedirectAttributes route) {
 		dao.deleteId(id);
-		route.addAttribute("comms", "Your Dropship was KIA");
+	//	route.addAttribute("comms", "Your Dropship was KIA");
 //		model.addAttribute("dshipList", dship);
 
-		return "";
+		return "delete";
 	}
 }

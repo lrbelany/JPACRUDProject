@@ -4,13 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Error Page</title>
+<title>Insert title here</title>
 </head>
 <body>
+if you are seeing this we have something
 
-<a href="home.do">Home</a>
-
-
-
-Operation Unsuccessful
+${dshipList}
+</body>
 </html>

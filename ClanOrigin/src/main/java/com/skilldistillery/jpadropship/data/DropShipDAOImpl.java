@@ -3,8 +3,6 @@ package com.skilldistillery.jpadropship.data;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -33,15 +31,10 @@ public class DropShipDAOImpl implements DropShipDAO {
 
 	@Override
 	public DropShip create(DropShip dship) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPADropShip");
-		EntityManager em = emf.createEntityManager();
 
-		em.getTransaction().begin();
 		em.persist(dship);
-		em.flush();
-		System.out.println("Dropship sortied:" + dship);
 
-		em.getTransaction().commit();
+		System.out.println("Dropship sortied:" + dship);
 
 		em.close();
 		return dship;
@@ -50,35 +43,24 @@ public class DropShipDAOImpl implements DropShipDAO {
 	@Override
 	public DropShip update(int id, DropShip dship) {
 
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPADropShip");
-		EntityManager em = emf.createEntityManager();
+		DropShip model = em.find(DropShip.class, id);
 
-		em.getTransaction().begin();
-
-		DropShip managed = em.find(DropShip.class, id);
-
-		managed.setClan(dship.getClan());
-		managed.setMech(dship.getMech());
-		managed.setPilot(dship.getPilot());
-		managed.setAerospaceFighter(dship.getAerospaceFighter());
-		managed.setCombatVehicle(dship.getCombatVehicle());
-
-		em.getTransaction().commit();
+		model.setClan(dship.getClan());
+		model.setMech(dship.getMech());
+		model.setPilot(dship.getPilot());
+		model.setAerospaceFighter(dship.getAerospaceFighter());
+		model.setCombatVehicle(dship.getCombatVehicle());
 
 		em.close();
-		return managed;
+		return model;
 	}
 
 	@Override
 	public boolean deleteId(int id) {
 
-		em.getTransaction().begin();
-
 		DropShip dship = em.find(DropShip.class, id);
 
 		em.remove(dship);
-
-		em.getTransaction().commit();
 
 		em.close();
 		return false;
