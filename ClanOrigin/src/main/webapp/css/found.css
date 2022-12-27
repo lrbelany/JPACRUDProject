@@ -13,23 +13,23 @@ body, html {
 }
 
 h2 {
-	text-align: center;
-text-indent: -150px;
-color: white;	
-text-shadow: 2px 2px 5px yellow;
-
-}
-h1 {
 	text-align: left;
-text-indent: 300px;
-color: 3px 3px 7px white;	
-text-shadow: 2px 2px 5px black;
+
+
+color: black;	
+
+
+}
+.results {
+	text-align: left;
+color: 6px 6px 10px black;	
+
 
 }
 
-.created{
+.output{
 	
-background-image: url(../images/jadefalcondropship.png);
+background-image: url(../images/outcat.png);
 background-size: cover;
 background-repeat: no-repeat;
 height: 100vh;

@@ -30,9 +30,7 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
+
 
 	<form action="created.do" method="POST">
             <label for="clan">Clan</label>

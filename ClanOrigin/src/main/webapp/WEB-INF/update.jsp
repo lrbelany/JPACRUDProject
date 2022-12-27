@@ -6,15 +6,25 @@
 <head>
 <meta charset="UTF-8">
 <title>update dropship</title>
+<link href="../css/updatesheet.css" rel="stylesheet" />
 </head>
 <body>
-
+<div class="update">
 	<br>
-	<br>
-	<div>
-		<a class="link-dark" href="home.do">Home</a>
-		<h3>Assemble units in a Dropship</h3>
+	
+		<h2><a class="link-dark" href="home.do">Home</a></h2>
+		<br>
+		
+		
+		<h1>Assemble units in a Dropship</h1>
 		<form class="form-group" action="update.do" method="GET">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
 <label for="id">ID</label> <input type="text"
 				name="id" required />
 			<br> <br> <label for="clan">Clan</label> <select required
@@ -31,12 +41,13 @@
 				name="combatVehicle" required /> <br> <br> <input
 				class="btn btn-dark" type="submit" value="Submit" /> <br> <br>
 		</form>
-	</div>
+	
 
 
 
 	<br>
 
-
+</div>
+	<br>
 </body>
 </html>

@@ -21,22 +21,23 @@ text-shadow: 2px 2px 5px lightblue;
 }
 h1 {
 	text-align: left;
-text-indent: 150px;
-color: green;	
-text-shadow: 2.5px 2.5px 6px yellow;
+text-indent: 320px;
+color: white;	
+text-shadow: 2.5px 2.5px 6px red;
 
 }
 
-.createdropship{
+.update{
 	
-background-image: url(../images/createhangar.jpeg);
+background-image: url(../images/updatedropship.png);
 background-size: cover;
 background-repeat: no-repeat;
 height: 100vh;
 }
 
-label{
+form{
 	
 	color: white;
-text-shadow: 2px 2px 5px orange;
+text-shadow: 2px 2px 5px red;
+text-indent: 25px;
 }

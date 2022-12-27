@@ -14,29 +14,23 @@ body, html {
 
 h2 {
 	text-align: center;
-text-indent: -150px;
-color: orange;	
-text-shadow: 2px 2px 5px lightblue;
+
+color: white;	
+text-shadow: 2px 2px 5px yellow;
 
 }
 h1 {
 	text-align: left;
-text-indent: 150px;
-color: green;	
-text-shadow: 2.5px 2.5px 6px yellow;
+text-indent: 80px;
+color: 3px 3px 7px #fb2c1d;	
+text-shadow: 2px 2px 5px lightyellow;
 
 }
 
-.createdropship{
+.updated{
 	
-background-image: url(../images/createhangar.jpeg);
+background-image: url(../images/wolfdropship.jpeg);
 background-size: cover;
 background-repeat: no-repeat;
 height: 100vh;
-}
-
-label{
-	
-	color: white;
-text-shadow: 2px 2px 5px orange;
 }

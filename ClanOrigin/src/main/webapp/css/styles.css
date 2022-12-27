@@ -66,16 +66,17 @@ text-shadow: 2px 2px #00ff0080
 .listheader {
 	text-align: left;
 	text-shadow: 2px 2px #00ff0080;
+	text-indent: 347px;
 	}
 
 .form-group{
 	color: 2px 2px 5px #feffff;
-	text-shadow: 2px 2px 5px orange;
+	text-shadow: 3px 3px 7px orange;
 transition: all 0.2s linear
 }
 .form-group:hover{
 	color: 2px 2px 5px #feffff;
-	text-shadow: 2px 2px 5px red;
+	text-shadow: 3px 3px 7px red;
 }
 
 .gotoform{
@@ -101,7 +102,7 @@ transition: all 0.3s linear;
 text-align: left;	
 text-indent: 100px;
 color: 2px 2px 5px #00ff0080;	
-	text-shadow: 2px 2px 5px #feffff;
+	text-shadow: 2px 2px 5px #29f337;
 }
 
 .gotoupdate{

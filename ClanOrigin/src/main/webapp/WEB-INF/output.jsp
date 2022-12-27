@@ -5,11 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title> Dropship output</title>
+<link href="../css/found.css" rel="stylesheet" />
 </head>
 <body>
-<a href="home.do">Home</a>
+<div class="output">
+<h2><a href="home.do">Home</a></h2>
 <br>
 <br>
+
+<div class="results">
+<h2>
 Dropship ID: ${dship.id}
 <br>
 Clan: ${dship.clan}
@@ -23,13 +28,21 @@ Aerospace Fighter: ${dship.aerospaceFighter}
 Elemental: ${dship.elemental}
 <br>
 Combat Vehicle: ${dship.combatVehicle}
+</h2>
+</div>
 <br>
-<a href="gotoupdate.do?id=$.id">Configure Dropship</a>
+<br>
 <br>
 <form action="deleteid.do" method="GET">
+ <label for="delete">Delete Current Dropship</label>
 				<input type ="hidden" name = "id" value ="${dship.id}"/>
 				<input class = "btn btn-primary" type="submit" value="Delete"  />
 				</form>
 
+<br>
+<br>
+<br>
+<a href="gotoupdate.do?id=$.id">Configure A Dropship</a>
+</div>
 </body>
 </html>

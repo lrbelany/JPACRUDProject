@@ -2,19 +2,20 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Dropship updated</title>
+<title>Created</title>
+<link href="../css/updatedsheet.css" rel="stylesheet" />
 </head>
 <body>
-<a href="home.do">Home</a>
+<div class="updated">
+<h2><a href="home.do">Home</a></h2>
+<br>
+<br>
+<br>
+<h1>Your Dropship Was Updated!</h1>
 
-<br>
-<br>
-<br>
-<br>
-<h3>Dropship Configured</h3>
-
-${dshipList}
+</div>
 </body>
 </html>
