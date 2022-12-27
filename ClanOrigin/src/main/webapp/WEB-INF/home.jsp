@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -8,110 +8,94 @@
 <head>
 <meta charset="UTF-8">
 <title>Clan Origin</title>
-<link href="../css/styles.css" rel="stylesheet"/>
+
+
+<link href="../css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<h1> In the beginning there were two.....</h1>
+	<div class="background-image">
+
+		<h1>In the beginning there were two.....</h1>
 
 
 
 
-<div class="row">
-  <div class="column">
-<h2>Jade Falcon</h2>
-    <img src="images/Jade Falcon.jpeg" alt="falcon" style="width:50%">
-  </div>
 
-  <div class="column">
-<h2>Wolf</h2>
-    <img src="images/wolf.jpeg" alt="wolf" style="width:50%">
-  </div>
-</div>
+		<div class="clans">
+			<div class="clanjf">
+				<br> <br> <br> <br> <br> <br>
+				<h2>Jade Falcon</h2>
+				<img src="images/jadefalcon.jpeg" alt="falcon">
+			</div>
 
-	
-	
-	<a href="gotoform.do">Search Dropship</a>
-	<br>
-	<a href="gotocreate.do">Create Dropship</a>
-	<br>
-	<a href="gotoupdate.do">Configure Dropship</a>
-	<br>
-	<br>
-	<br>
-	
+			<div class="clanwolf">
+				<br> <br> <br> <br> <br> <br>
+				<h2>Wolf</h2>
+				<img src="images/wolf.jpeg" alt="wolf">
+			</div>
+		</div>
+<br>
+<br>
+
+<div class="gotoform">
+		<h2><a href="gotoform.do">Search Dropship</a></h2> <br> 
+		</div>
+	<br>	
+		<div class="gotocreate">
+		<h2><a href="gotocreate.do">Create New Dropship</a></h2> <br>
+		</div>
+		<br> 
+		 <div class="gotoupdate">
+		 <h2><a href="gotoupdate.do">Configure Existing Dropship</a></h2>
+		 </div>
+		 
+		  <br> 
+		  <br> 
+		  <br>
+
 		<form class="form-group" action="deleteid.do" method="GET">
-<label for="id">To Delete Dropship enter its ID</label> <input type="text" name="id"/>
-				 <input class="btn btn-dark" type="submit" value="Delete" /> <br> <br>
+			<label for="id">To Delete Dropship enter its ID</label> <input
+				type="text" name="id" /> <input class="btn btn-dark" type="submit"
+				value="Delete" /> <br> <br>
 		</form>
-	
-	
+
+
+
+
+		<div class="list">
+			<div class="listheader">
+			<h2>Dropships</h2>
+			</div>
 			
-				
-	<div>
-	
-
-<c:choose>
-
-		<c:when test="${empty dshipList}">
-
-			<h2>Nothing found</h2>
-				<body>
-		
-		</c:when>
-		<c:otherwise>
-		     <table>
-				<thead>
+			<table border="3">
+				<tr>
+					<th>Dropship ID</th>
+					<th>Clan</th>
+					<th>Mech</th>
+					<th>Pilot</th>
+					<th>Elemental</th>
+					<th>Aerospace Fighter</th>
+					<th>Combat Vehicle</th>
+				</tr>
+				<c:forEach var="dship" items="${dshipList}">
 					<tr>
-						<th></th>
-						<th></th>
+						<td>${dship.id}</td>
+						<td>${dship.clan}</td>
+						<td align="center">${dship.mech}</td>
+						<td align="center">${dship.pilot}</td>
+						<td align="center">${dship.elemental}</td>
+						<td align="center">${dship.aerospaceFighter}</td>
+						<td align="center">${dship.combatVehicle}</td>
 					</tr>
-				</thead>
-					<c:forEach var="dship" items="${dshipList}">
-						<tr>
-							<table class="table table-bordered">
-  <thead class="thead-dark">
-    <tr>
-    
-      <th scope="col">ID</th>
-      <th scope="col">Clan</th>
-      <th scope="col">Mech</th>
-      <th scope="col">Pilot</th>
-      <th scope="col">Elemental</th>
-      <th scope="col">Aerospace Fighter</th>
-      <th scope="col">Combat Vehicle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      
-      <td>${dship.id}</td>
-      <br>
-      <td>${dship.clan}</td>
-      <br>
-      <td>${dship.mech}</td>
-      <br>
-      <td>${dship.pilot}</td>
-      <br>
-      <td>${dship.elemental}</td>
-      <br>
-      <td>${dship.aerospaceFighter}</td>
-      <br>
-      <td>${dship.combatVehicle}</td>
-  
-    </tr>
-  </tbody>
-</table>
-							
-						</tr>
-					</c:forEach>
+				</c:forEach>
 			</table>
+		</div>
+	</div>
 
-
-		</c:otherwise>
-	</c:choose>
-
-</div>
 
 </body>
+
+
+
+
 </html>

@@ -61,12 +61,12 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `clansdb`;
-INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (1, 'jade_falcon', 'summoner', 'elizabeth_hazen', 'scytha', 'armored_heavy', 'hachiman');
-INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (2, 'jade_falcon', 'direwolf', 'adler_malthus', 'vandal', 'armored_laser', 'mars');
-INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (3, 'jade_falcon', 'warhawk', 'aidan_pryde', 'tomahawk', 'constable', 'zorya');
-INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (4, 'wolf', 'gargoyle', 'ulrich_kerensky', 'jagatai', 'pulse_laser', 'ishtar');
-INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (5, 'wolf', 'timber_wolf', 'natasha_kerensky', 'batu', 'armored_flame', 'odin');
-INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (6, 'wolf', 'mad_dog', 'zheng_cuffe', 'visigoth', 'armored_gauss', 'svantovit');
+INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (1, 'Jade Falcon', 'Summoner', 'Elizabeth Hazen', 'Scytha', 'Armored Heavy', 'Hachiman');
+INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (2, 'Jade Falcon', 'Direwolf', 'Adler Malthus', 'Vandal', 'Armored Laser', 'Mars');
+INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (3, 'Jade Falcon', 'Warhawk', 'Aidan Pryde', 'Tomahawk', 'Constable', 'Zorya');
+INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (4, 'Wolf', 'Gargoyle', 'Ulrich Kerensky', 'Jagatai', 'Pulse Laser', 'Ishtar');
+INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (5, 'Wolf', 'Timber Wolf', 'Natasha Kerensky', 'Batu', 'Armored Flame', 'Odin');
+INSERT INTO `drop_ship` (`id`, `clan`, `mech`, `pilot`, `aerospace_fighter`, `elemental`, `combat_vehicle`) VALUES (6, 'Wolf', 'Mad Dog', 'Zheng Cuffe', 'Visigoth', 'Armored Gauss', 'Svantovit');
 
 COMMIT;
 

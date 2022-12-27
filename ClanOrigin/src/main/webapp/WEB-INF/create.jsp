@@ -5,13 +5,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Creating</title>
+<link href="../css/createsheet.css" rel="stylesheet" />
 </head>
 <body>
-<a href="home.do">Home</a>
+<div class="createdropship">
+<h2><a href="home.do">Home</a></h2>
 <br>
 <br>
-<h3>Create a new Dropship:</h3>
+<br>
+<br>
+<br>
+<br>
+<h1>Create a new Dropship:</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 	<form action="created.do" method="POST">
+            <label for="clan">Clan</label>
 		<select required name="clan" id="clan">
 			<option value="jadeFalcon">Jade Falcon</option>
 			<option value="wolf">Wolf</option>
@@ -30,5 +54,6 @@
 		 <br> <br> 
 			<input class="btn btn-dark" type="submit" value="Submit" /> 
 	</form>
+</div>
 </body>
 </html>

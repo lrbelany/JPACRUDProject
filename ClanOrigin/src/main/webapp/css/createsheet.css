@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	overflow-y: auto;
+	font-family: Arial, Helvetica Neue, sans-serif;
+}
+
+h2 {
+	text-align: center;
+text-indent: -150px;
+color: orange;	
+text-shadow: 2px 2px 5px lightblue;
+
+}
+h1 {
+	text-align: left;
+text-indent: 150px;
+color: green;	
+text-shadow: 2px 2px 5px white;
+
+}
+
+.createdropship{
+	
+background-image: url(../images/createhangar.jpeg);
+background-size: cover;
+background-repeat: no-repeat;
+height: 100vh;
+}
+
+label{
+	
+	color: white;
+text-shadow: 2px 2px 5px orange;
+}

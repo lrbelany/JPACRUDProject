@@ -5,12 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>KIA</title>
+<link href="../css/kiasheet.css" rel="stylesheet" />
 </head>
 <body>
-<a href="home.do">Home</a>
+<div class="kia">
+<h2><a href="home.do">Home</a></h2>
 <br>
 <br>
 <br>
-<h3>Your Dropship was KIA</h3>
+<h1>Your Dropship was KIA...</h1>
+</div>
 </body>
 </html>

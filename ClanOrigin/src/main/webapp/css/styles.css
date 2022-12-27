@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 body, html {
 	margin: 0;
 	padding: 0;
@@ -11,27 +12,108 @@ body, html {
 	font-family: Arial, Helvetica Neue, sans-serif;
 }
 
-body > h1 {
+body>h1 {
 	text-align: center;
+	
+
 }
+.background-image{
+	text-align: center;
+background-image: url(../images/homebackground.jpeg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
 
 .clans {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	text-align: center;
+
 }
 
 .clan {
 	text-align: center;
 }
-
-
+.clanjf{
+text-shadow: 2px 2px #00ff0080
+	
+}
 .clanjf img {
-	width: 100%;
-	height: auto;
+	float: left; width : 100%;
+	height: 400px;
 	display: block;
+	object-fit: cover;
+	width: 100%;
+}
+.clanwolf{
+	
+	text-shadow: 2px 2px 5px #ff0000;
 }
 .clanwolf img {
+	float: right;
 	width: 100%;
-	height: auto;
+	height: 400px;
 	display: block;
+	object-fit: cover;
+}
+
+.list {
+	text-shadow: 2px 2px #00ff0080;
+	
+}
+
+.listheader {
+	text-align: left;
+	text-shadow: 2px 2px #00ff0080;
+	}
+
+.form-group{
+	color: 2px 2px 5px #feffff;
+	text-shadow: 2px 2px 5px orange;
+transition: all 0.2s linear
+}
+.form-group:hover{
+	color: 2px 2px 5px #feffff;
+	text-shadow: 2px 2px 5px red;
+}
+
+.gotoform{
+text-align: left;
+color: black;	
+text-shadow: 2px 2px 5px #ffff99;
+transition: all 0.3s linear;
+}
+.gotoform:hover{
+text-align: left;
+color: 2px 2px 5px #00ff0080;	
+text-shadow: 2px 2px 5px #ff2600;
+}
+
+.gotocreate{	
+text-align: left;	
+text-indent: 100px;
+color: lightblue;	
+	text-shadow: 2px 2px 5px #ffff99;
+transition: all 0.3s linear;
+}
+.gotocreate:hover{	
+text-align: left;	
+text-indent: 100px;
+color: 2px 2px 5px #00ff0080;	
+	text-shadow: 2px 2px 5px #feffff;
+}
+
+.gotoupdate{
+text-align: left;	
+	text-indent: 200px;
+color: lightgreen;	
+	text-shadow: 2px 2px 5px #ffff99;
+transition: all 0.3s linear;
+}
+.gotoupdate:hover{
+text-align: left;	
+	text-indent: 200px;
+color: 2px 2px 5px #00ff0080;	
+	text-shadow: 2px 2px 5px #ff7d78;
 }
